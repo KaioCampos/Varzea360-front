@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Campos e Quadras</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <style>
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .venue-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .venue-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .venue-top h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .venue-top p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .surface-tag {
+            background-color: rgba(0, 230, 118, 0.08);
+            color: var(--green-primary);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .venue-details {
+            list-style: none;
+            margin: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 0;
+        }
+        .venue-details li {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            margin-bottom: 8px;
+        }
+        .venue-details li:last-child {
+            margin-bottom: 0;
+        }
+        .venue-details span:first-child {
+            color: var(--text-muted);
+        }
+        .venue-details span:last-child {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .venue-actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="mercado.html" class="nav-item">Mercado da Bola</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="campos-quadras.html" class="nav-item active">Campos & Quadras</a>
+
+                <span class="nav-category">FINANCEIRO</span>
+                <a href="pagamentos.html" class="nav-item">Pagamentos & Mensalidades</a>
+                <a href="caches.html" class="nav-item">Cachês & Premiações</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="competicoes.html" class="nav-item">Consulta</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Campos e Quadras</h1>
+                    <p>Gestão de arenas, palcos de jogos e locais de treinamento</p>
+                </div>
+                <button class="btn-new" onclick="alert('Abrir formulário de novo campo')">+ Novo Campo</button>
+            </header>
+
+            <!-- Grelha de Locais -->
+            <div class="venues-grid">
+                <!-- Local 1 -->
+                <article class="venue-card">
+                    <div>
+                        <div class="venue-top">
+                            <div>
+                                <h3>Arena MRV</h3>
+                                <p>Belo Horizonte - MG</p>
+                            </div>
+                            <span class="surface-tag">Grama Natural</span>
+                        </div>
+
+                        <ul class="venue-details">
+                            <li><span>Capacidade</span> <span>46.000 lugares</span></li>
+                            <li><span>Iluminação</span> <span>LED Profissional</span></li>
+                            <li><span>Vestiários</span> <span>4 amplos</span></li>
+                            <li><span>Valor locação / hora</span> <span style="color: var(--green-primary);">R$ 1.200,00</span></li>
+                            <li><span>Status</span> <span style="color: var(--green-primary);">Disponível</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="venue-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar campo')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir campo')">Excluir</button>
+                    </div>
+                </article>
+
+                <!-- Local 2 -->
+                <article class="venue-card">
+                    <div>
+                        <div class="venue-top">
+                            <div>
+                                <h3>Campo Municipal do Horto</h3>
+                                <p>Pirapora do Bom Jesus - SP</p>
+                            </div>
+                            <span class="surface-tag" style="background-color: rgba(50, 150, 255, 0.08); color: #60a5fa; border-color: rgba(50, 150, 255, 0.2);">Grama Sintética</span>
+                        </div>
+
+                        <ul class="venue-details">
+                            <li><span>Capacidade</span> <span>2.500 lugares</span></li>
+                            <li><span>Iluminação</span> <span>Refletores estándar</span></li>
+                            <li><span>Vestiários</span> <span>2 padrão</span></li>
+                            <li><span>Valor locação / hora</span> <span style="color: var(--green-primary);">R$ 250,00</span></li>
+                            <li><span>Status</span> <span style="color: var(--green-primary);">Disponível</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="venue-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar campo')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir campo')">Excluir</button>
+                    </div>
+                </article>
+
+                <!-- Local 3 -->
+                <article class="venue-card">
+                    <div>
+                        <div class="venue-top">
+                            <div>
+                                <h3>Arena Society do Parque</h3>
+                                <p>Barueri - SP</p>
+                            </div>
+                            <span class="surface-tag" style="background-color: rgba(50, 150, 255, 0.08); color: #60a5fa; border-color: rgba(50, 150, 255, 0.2);">Sintético 7</span>
+                        </div>
+
+                        <ul class="venue-details">
+                            <li><span>Capacidade</span> <span>500 pessoas</span></li>
+                            <li><span>Iluminação</span> <span>LED Completa</span></li>
+                            <li><span>Vestiários</span> <span>2 com chuveiro</span></li>
+                            <li><span>Valor locação / hora</span> <span style="color: var(--green-primary);">R$ 180,00</span></li>
+                            <li><span>Status</span> <span style="color: #ffb74d;">Manutenção</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="venue-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar campo')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir campo')">Excluir</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

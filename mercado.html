@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Mercado da Bola</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <style>
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .player-market-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .player-market-card:hover {
+            border-color: rgba(0, 230, 118, 0.4);
+            transform: translateY(-2px);
+        }
+        .player-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .player-top h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .player-top span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .position-tag {
+            background-color: rgba(0, 230, 118, 0.1);
+            color: var(--green-primary);
+            border: 1px solid rgba(0, 230, 118, 0.25);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+        .player-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 14px 0;
+            text-align: center;
+        }
+        .stat-box strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .stat-box span {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+        .player-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .btn-propose {
+            width: 100%;
+            background-color: var(--green-primary);
+            color: #051b0e;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-propose:hover {
+            background-color: var(--green-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="mercado.html" class="nav-item active">Mercado da Bola</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="despesas-partida.html" class="nav-item">Despesas de Partida</a>
+
+                <span class="nav-category">FINANCEIRO</span>
+                <a href="pagamentos.html" class="nav-item">Pagamentos & Mensalidades</a>
+                <a href="caches.html" class="nav-item">Cachês & Premiações</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="competicoes.html" class="nav-item">Consulta</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Mercado da Bola</h1>
+                    <p>Atletas disponíveis para reforçar o elenco do seu clube</p>
+                </div>
+                <button class="btn-new" onclick="alert('Abrir formulário de anúncio de vaga')">+ Anunciar Vaga</button>
+            </header>
+
+            <!-- Barra de Filtros -->
+            <div class="search-bar-container" style="display: grid; grid-template-columns: 1fr 220px; gap: 16px;">
+                <div style="position: relative;">
+                    <span class="search-icon" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%);">🔍</span>
+                    <input type="text" placeholder="Buscar atleta por nome ou cidade..." style="width: 100%; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px 12px 40px; color: var(--text-main); font-size: 0.85rem; outline: none;">
+                </div>
+                <select style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-size: 0.85rem; outline: none;">
+                    <option value="">Todas as posições</option>
+                    <option value="gol">Goleiro</option>
+                    <option value="zag">Zagueiro / Lateral</option>
+                    <option value="mei">Meio-campista</option>
+                    <option value="ata">Atacante</option>
+                </select>
+            </div>
+
+            <!-- Grelha de Atletas no Mercado -->
+            <div class="market-grid">
+                <!-- Atleta 1 -->
+                <article class="player-market-card">
+                    <div>
+                        <div class="player-top">
+                            <div>
+                                <h3>Lucas Mendes</h3>
+                                <span>24 anos · Destro</span>
+                            </div>
+                            <span class="position-tag">ATACANTE</span>
+                        </div>
+
+                        <div class="player-stats">
+                            <div class="stat-box">
+                                <strong>18</strong>
+                                <span>JOGOS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong style="color: var(--green-primary);">14</strong>
+                                <span>GOLS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong>6</strong>
+                                <span>ASSIST.</span>
+                            </div>
+                        </div>
+
+                        <p class="player-meta">📍 Santana de Parnaíba - SP<br>💰 Pretensão: R$ 150,00 / jogo</p>
+                    </div>
+
+                    <button class="btn-propose" onclick="alert('Proposta enviada para Lucas Mendes!')">Enviar Proposta</button>
+                </article>
+
+                <!-- Atleta 2 -->
+                <article class="player-market-card">
+                    <div>
+                        <div class="player-top">
+                            <div>
+                                <h3>Rafael Costa</h3>
+                                <span>28 anos · Canhoto</span>
+                            </div>
+                            <span class="position-tag">MEIA</span>
+                        </div>
+
+                        <div class="player-stats">
+                            <div class="stat-box">
+                                <strong>22</strong>
+                                <span>JOGOS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong style="color: var(--green-primary);">5</strong>
+                                <span>GOLS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong>15</strong>
+                                <span>ASSIST.</span>
+                            </div>
+                        </div>
+
+                        <p class="player-meta">📍 Barueri - SP<br>💰 Pretensão: Sem custo (Livre)</p>
+                    </div>
+
+                    <button class="btn-propose" onclick="alert('Proposta enviada para Rafael Costa!')">Enviar Proposta</button>
+                </article>
+
+                <!-- Atleta 3 -->
+                <article class="player-market-card">
+                    <div>
+                        <div class="player-top">
+                            <div>
+                                <h3>Bruno Ferreira</h3>
+                                <span>26 anos · Destro</span>
+                            </div>
+                            <span class="position-tag">GOLEIRO</span>
+                        </div>
+
+                        <div class="player-stats">
+                            <div class="stat-box">
+                                <strong>20</strong>
+                                <span>JOGOS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong style="color: var(--green-primary);">9</strong>
+                                <span>CLEAN SHEETS</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong>3</strong>
+                                <span>PÊNALTIS DEF.</span>
+                            </div>
+                        </div>
+
+                        <p class="player-meta">📍 Pirapora do Bom Jesus - SP<br>💰 Pretensão: R$ 120,00 / jogo</p>
+                    </div>
+
+                    <button class="btn-propose" onclick="alert('Proposta enviada para Bruno Ferreira!')">Enviar Proposta</button>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

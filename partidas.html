@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Consulta de Partidas</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <style>
+        /* Estilos específicos pontuais para a tabela de partidas */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-badge.scheduled {
+            background-color: rgba(0, 230, 118, 0.08);
+            color: var(--green-primary);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+        }
+        .status-badge.finished {
+            background-color: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+        .comp-pill {
+            display: inline-block;
+            background-color: rgba(0, 230, 118, 0.1);
+            color: var(--green-primary);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item active">Consulta de Partidas</a>
+                <a href="#" class="nav-item">+ Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="#" class="nav-item">Consulta</a>
+                <a href="#" class="nav-item">+ Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Partidas</h1>
+                    <p>6 partidas registadas</p>
+                </div>
+                <button class="btn-new" onclick="alert('Abrir formulário de nova partida')">+ Nova Partida</button>
+            </header>
+
+            <!-- Barra de Pesquisa e Filtro -->
+            <div class="search-bar-container" style="display: grid; grid-template-columns: 1fr 200px; gap: 16px;">
+                <div style="position: relative;">
+                    <span class="search-icon" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%);">🔍</span>
+                    <input type="text" placeholder="Buscar por clubes, rodada, local..." style="width: 100%; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px 12px 40px; color: var(--text-main); font-size: 0.85rem; outline: none;">
+                </div>
+                <select style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-size: 0.85rem; outline: none;">
+                    <option value="">Todos os status</option>
+                    <option value="agendada">Agendada</option>
+                    <option value="realizada">Realizada</option>
+                </select>
+            </div>
+
+            <!-- Tabela de Partidas -->
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PARTIDA</th>
+                            <th>PLACAR</th>
+                            <th>COMPETIÇÃO</th>
+                            <th>DATA / HORA</th>
+                            <th>LOCAL</th>
+                            <th>STATUS</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Atlético <span style="color: var(--text-muted); font-weight: normal;">vs</span> Flamengo</strong>
+                                <span class="sub-text">Semifinal</span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                            <td><span class="comp-pill">Libertadores</span></td>
+                            <td>24/09/2026<br><span class="sub-text">21:00</span></td>
+                            <td>Arena MRV</td>
+                            <td><span class="status-badge scheduled">⏱️ Agendada</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver detalhes')">Ver</button>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Abrir escalação')">Escalação</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Atlético <span style="color: var(--text-muted); font-weight: normal;">vs</span> Santos</strong>
+                                <span class="sub-text">Quartas de Final</span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                            <td><span class="comp-pill">Copa BR</span></td>
+                            <td>17/09/2026<br><span class="sub-text">21:30</span></td>
+                            <td>Arena MRV</td>
+                            <td><span class="status-badge scheduled">⏱️ Agendada</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver detalhes')">Ver</button>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Abrir escalação')">Escalação</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Corinthians <span style="color: var(--text-muted); font-weight: normal;">vs</span> São Paulo</strong>
+                                <span class="sub-text">Rodada 25</span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                            <td><span class="comp-pill">Brasileirão</span></td>
+                            <td>14/09/2026<br><span class="sub-text">18:30</span></td>
+                            <td>Neo Química Arena</td>
+                            <td><span class="status-badge scheduled">⏱️ Agendada</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver detalhes')">Ver</button>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Abrir escalação')">Escalação</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>São Paulo <span style="color: var(--text-muted); font-weight: normal;">vs</span> Atlético</strong>
+                                <span class="sub-text">Rodada 25</span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                            <td><span class="comp-pill">Brasileirão</span></td>
+                            <td>10/09/2026<br><span class="sub-text">19:00</span></td>
+                            <td>Morumbi</td>
+                            <td><span class="status-badge scheduled">⏱️ Agendada</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver detalhes')">Ver</button>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Abrir escalação')">Escalação</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Atlético <span style="color: var(--text-muted); font-weight: normal;">vs</span> Flamengo</strong>
+                                <span class="sub-text">Rodada 24</span>
+                            </td>
+                            <td><strong style="color: var(--green-primary); font-size: 0.95rem;">2 - 1</strong></td>
+                            <td><span class="comp-pill">Brasileirão</span></td>
+                            <td>05/09/2026<br><span class="sub-text">21:00</span></td>
+                            <td>Arena MRV</td>
+                            <td><span class="status-badge finished">Encerrada</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver detalhes')">Ver</button>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Abrir escalação')">Escalação</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

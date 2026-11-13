@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Novo Clube</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item active">+ Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="#" class="nav-item">Consulta de Partidas</a>
+                <a href="#" class="nav-item">+ Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="#" class="nav-item">Consulta</a>
+                <a href="#" class="nav-item">+ Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Novo Clube</h1>
+                    <p>Preencha os dados do clube</p>
+                </div>
+                <a href="clubes.html" class="btn-back-form">← Voltar</a>
+            </header>
+
+            <form id="form-novo-clube" class="form-cards-grid">
+                <!-- Coluna Esquerda: Informações Gerais -->
+                <section class="form-card">
+                    <h3 class="card-section-title">INFORMAÇÕES GERAIS</h3>
+
+                    <div class="form-group">
+                        <label for="nome-completo">NOME COMPLETO <span class="required">*</span></label>
+                        <input type="text" id="nome-completo" placeholder="Nome Completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome-curto">NOME CURTO / APELIDO <span class="required">*</span></label>
+                        <input type="text" id="nome-curto" placeholder="Nome Curto / Apelido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cores">CORES</label>
+                        <input type="text" id="cores" placeholder="Cores">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fundacao">ANO DE FUNDAÇÃO</label>
+                            <input type="number" id="fundacao" value="1900" min="1850" max="2026">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">ESTADO</label>
+                            <select id="estado">
+                                <option value="SP" selected>SP</option>
+                                <option value="RJ">RJ</option>
+                                <option value="MG">MG</option>
+                                <option value="RS">RS</option>
+                                <option value="PR">PR</option>
+                                <option value="SC">SC</option>
+                                <option value="BA">BA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">CIDADE <span class="required">*</span></label>
+                        <input type="text" id="cidade" placeholder="Cidade" required>
+                    </div>
+                </section>
+
+                <!-- Coluna Direita: Infraestrutura & Gestão -->
+                <section class="form-card">
+                    <h3 class="card-section-title">INFRAESTRUTURA & GESTÃO</h3>
+
+                    <div class="form-group">
+                        <label for="estadio">ESTÁDIO <span class="required">*</span></label>
+                        <input type="text" id="estadio" placeholder="Estádio" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="capacidade">CAPACIDADE DO ESTÁDIO</label>
+                        <input type="number" id="capacidade" value="0" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="presidente">PRESIDENTE</label>
+                        <input type="text" id="presidente" placeholder="Presidente">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">WEBSITE</label>
+                        <input type="url" id="website" placeholder="Website">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">Salvar Clube</button>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+
+    <script>
+        document.getElementById('form-novo-clube').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome-completo').value;
+            alert(`Clube "${nome}" validado com sucesso! Em breve enviaremos para o Back-end Java.`);
+            window.location.href = 'clubes.html';
+        });
+    </script>
+</body>
+</html>

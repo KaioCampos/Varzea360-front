@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Consulta de Competições</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <style>
+        /* Grelha de Cards de Competições */
+        .competitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .competition-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .comp-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        .comp-header-top h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .comp-header-top p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .comp-type-badge {
+            background-color: rgba(0, 230, 118, 0.08);
+            color: var(--green-primary);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .comp-details-list {
+            list-style: none;
+            margin: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+        .comp-details-list li {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            margin-bottom: 10px;
+        }
+        .comp-details-list li:last-child {
+            margin-bottom: 0;
+        }
+        .comp-details-list span:first-child {
+            color: var(--text-muted);
+        }
+        .comp-details-list span:last-child {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .comp-actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="nova-partida.html" class="nav-item">+ Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="competicoes.html" class="nav-item active">Consulta</a>
+                <a href="#" class="nav-item">+ Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Competições</h1>
+                    <p>4 competições cadastradas</p>
+                </div>
+                <button class="btn-new" onclick="alert('Abrir formulário de nova competição')">+ Nova Competição</button>
+            </header>
+
+            <!-- Grelha de Competições -->
+            <div class="competitions-grid">
+                <!-- Card 1: Brasileirão -->
+                <div class="competition-card">
+                    <div>
+                        <div class="comp-header-top">
+                            <div>
+                                <h2>Brasileirão</h2>
+                                <p>Campeonato Brasileiro Série A</p>
+                            </div>
+                            <span class="comp-type-badge">Nacional</span>
+                        </div>
+
+                        <ul class="comp-details-list">
+                            <li><span>Temporada</span> <span>2026</span></li>
+                            <li><span>Organizador</span> <span>CBF</span></li>
+                            <li><span>Início</span> <span>08/04/2026</span></li>
+                            <li><span>Término</span> <span>06/12/2026</span></li>
+                            <li><span>Formato</span> <span>Pontos Corridos - 38 rodadas</span></li>
+                            <li><span>Categoria</span> <span>Convencional</span></li>
+                            <li><span>Modalidade adaptada</span> <span>Não se aplica</span></li>
+                            <li><span>Premiação</span> <span style="color: var(--green-primary);">R$ 35.000.000,00</span></li>
+                            <li><span>Partidas registadas</span> <span>2/4</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="comp-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar Competição')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir Competição')">Excluir</button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Copa BR -->
+                <div class="competition-card">
+                    <div>
+                        <div class="comp-header-top">
+                            <div>
+                                <h2>Copa BR</h2>
+                                <p>Copa do Brasil</p>
+                            </div>
+                            <span class="comp-type-badge" style="background-color: rgba(180, 100, 255, 0.08); color: #c084fc; border-color: rgba(180, 100, 255, 0.2);">Copa</span>
+                        </div>
+
+                        <ul class="comp-details-list">
+                            <li><span>Temporada</span> <span>2026</span></li>
+                            <li><span>Organizador</span> <span>CBF</span></li>
+                            <li><span>Início</span> <span>05/02/2026</span></li>
+                            <li><span>Término</span> <span>24/09/2026</span></li>
+                            <li><span>Formato</span> <span>Eliminatórias - Mata-mata</span></li>
+                            <li><span>Categoria</span> <span>Convencional</span></li>
+                            <li><span>Modalidade adaptada</span> <span>Não se aplica</span></li>
+                            <li><span>Premiação</span> <span style="color: var(--green-primary);">R$ 70.000.000,00</span></li>
+                            <li><span>Partidas registadas</span> <span>1/4</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="comp-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar Competição')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir Competição')">Excluir</button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Libertadores -->
+                <div class="competition-card">
+                    <div>
+                        <div class="comp-header-top">
+                            <div>
+                                <h2>Libertadores</h2>
+                                <p>Copa Libertadores da América</p>
+                            </div>
+                            <span class="comp-type-badge" style="background-color: rgba(255, 150, 0, 0.08); color: #fb923c; border-color: rgba(255, 150, 0, 0.2);">Internacional</span>
+                        </div>
+
+                        <ul class="comp-details-list">
+                            <li><span>Temporada</span> <span>2026</span></li>
+                            <li><span>Organizador</span> <span>CONMEBOL</span></li>
+                            <li><span>Início</span> <span>04/02/2026</span></li>
+                            <li><span>Término</span> <span>28/11/2026</span></li>
+                            <li><span>Formato</span> <span>Grupos + Mata-mata</span></li>
+                            <li><span>Categoria</span> <span>Convencional</span></li>
+                            <li><span>Modalidade adaptada</span> <span>Não se aplica</span></li>
+                            <li><span>Premiação</span> <span style="color: var(--green-primary);">R$ 120.000.000,00</span></li>
+                            <li><span>Partidas registadas</span> <span>1/4</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="comp-actions">
+                        <button class="btn-action edit" style="flex: 1;" onclick="alert('Editar Competição')">Editar</button>
+                        <button class="btn-action delete" style="flex: 1;" onclick="alert('Excluir Competição')">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

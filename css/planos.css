@@ -1,0 +1,229 @@
+/* css/planos.css */
+body {
+    background: radial-gradient(circle at top center, #0e3822 0%, var(--bg-dark) 45%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra Superior */
+.plans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(11, 19, 26, 0.7);
+}
+
+.btn-back {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    border-color: var(--green-primary);
+    color: var(--green-primary);
+}
+
+.brand-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.spacer {
+    width: 115px; /* Equilibra o alinhamento central da logo */
+}
+
+/* Conteúdo Principal */
+.plans-container {
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+    flex: 1;
+}
+
+.plans-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tag-subtitle {
+    color: var(--green-primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.plans-intro h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.plans-intro p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Grelha dos 3 Planos */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.plan-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 230, 118, 0.35);
+}
+
+/* Cartão Central em Destaque */
+.plan-card.featured {
+    border: 1.5px solid var(--green-primary);
+    background: linear-gradient(180deg, rgba(0, 230, 118, 0.06) 0%, var(--bg-card) 40%);
+    box-shadow: 0 12px 35px rgba(0, 230, 118, 0.08);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--green-primary);
+    color: #051b0e;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.plan-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.plan-icon {
+    color: var(--green-primary);
+    font-size: 1.1rem;
+}
+
+.plan-header h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.plan-price {
+    margin-bottom: 6px;
+}
+
+.plan-price strong {
+    font-size: 2.1rem;
+    font-weight: 800;
+}
+
+.plan-price span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.plan-limit {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.card-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 22px 0;
+}
+
+/* Lista de Benefícios */
+.plan-features {
+    list-style: none;
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #d1d7db;
+    margin-bottom: 14px;
+}
+
+.plan-features li span {
+    color: var(--green-primary);
+    font-weight: bold;
+}
+
+/* Botões dos Planos */
+.btn-subscribe {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    transition: all 0.2s;
+}
+
+.btn-subscribe:hover {
+    background-color: rgba(0, 230, 118, 0.1);
+    border-color: var(--green-primary);
+}
+
+.btn-subscribe.primary {
+    background-color: var(--green-primary);
+    color: #051b0e;
+    border: none;
+}
+
+.btn-subscribe.primary:hover {
+    background-color: var(--green-hover);
+}
+
+.floating-help-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #0b131a;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}

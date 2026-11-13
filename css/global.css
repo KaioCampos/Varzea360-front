@@ -1,0 +1,23 @@
+/* css/global.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #0b131a;
+    --bg-card: #111b22;
+    --green-primary: #00e676;
+    --green-hover: #00c853;
+    --text-main: #ffffff;
+    --text-muted: #8696a0;
+    --border-color: #222d34;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+}

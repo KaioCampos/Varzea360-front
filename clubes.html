@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Consulta de Clubes</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item active">Consulta de Clubes</a>
+                <a href="#" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="#" class="nav-item">Consulta de Partidas</a>
+                <a href="#" class="nav-item">Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="#" class="nav-item">Consulta</a>
+                <a href="#" class="nav-item">Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Clubes</h1>
+                    <p>5 clubes cadastrados</p>
+                </div>
+                <button class="btn-new" onclick="alert('Abrir formulário de novo clube')">+ Novo Clube</button>
+            </header>
+
+            <!-- Barra de Pesquisa -->
+            <div class="search-bar-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Buscar por nome, cidade...">
+            </div>
+
+            <!-- Tabela de Clubes -->
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CLUBE</th>
+                            <th>CIDADE / ESTADO</th>
+                            <th>FUNDAÇÃO</th>
+                            <th>ESTÁDIO</th>
+                            <th>CAPACIDADE</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Clube Atlético Mineiro</strong>
+                                <span class="sub-text">Atlético</span>
+                            </td>
+                            <td>Belo Horizonte - MG</td>
+                            <td>1908</td>
+                            <td>Arena MRV</td>
+                            <td>46.000 lugares</td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Editar Clube')">Editar</button>
+                                <button class="btn-action delete" onclick="alert('Excluir Clube')">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Clube de Regatas do Flamengo</strong>
+                                <span class="sub-text">Flamengo</span>
+                            </td>
+                            <td>Rio de Janeiro - RJ</td>
+                            <td>1895</td>
+                            <td>Maracanã</td>
+                            <td>78.838 lugares</td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Editar Clube')">Editar</button>
+                                <button class="btn-action delete" onclick="alert('Excluir Clube')">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>São Paulo Futebol Clube</strong>
+                                <span class="sub-text">São Paulo</span>
+                            </td>
+                            <td>São Paulo - SP</td>
+                            <td>1930</td>
+                            <td>Morumbi</td>
+                            <td>67.052 lugares</td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Editar Clube')">Editar</button>
+                                <button class="btn-action delete" onclick="alert('Excluir Clube')">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Santos Futebol Clube</strong>
+                                <span class="sub-text">Santos</span>
+                            </td>
+                            <td>Santos - SP</td>
+                            <td>1912</td>
+                            <td>Vila Belmiro</td>
+                            <td>16.798 lugares</td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Editar Clube')">Editar</button>
+                                <button class="btn-action delete" onclick="alert('Excluir Clube')">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Sport Club Corinthians Paulista</strong>
+                                <span class="sub-text">Corinthians</span>
+                            </td>
+                            <td>São Paulo - SP</td>
+                            <td>1910</td>
+                            <td>Neo Química Arena</td>
+                            <td>49.205 lugares</td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Editar Clube')">Editar</button>
+                                <button class="btn-action delete" onclick="alert('Excluir Clube')">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

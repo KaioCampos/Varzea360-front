@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Gestão de Pagamentos</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <style>
+        .finance-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .finance-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .finance-card span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .finance-card strong {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="despesas-partida.html" class="nav-item">Despesas de Partida</a>
+
+                <span class="nav-category">FINANCEIRO</span>
+                <a href="pagamentos.html" class="nav-item active">Pagamentos & Mensalidades</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="competicoes.html" class="nav-item">Consulta</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Pagamentos & Mensalidades</h1>
+                    <p>Controlo de recebimentos, mensalidades de atletas e receitas</p>
+                </div>
+                <button class="btn-new" onclick="alert('Registar novo recebimento')">+ Novo Pagamento</button>
+            </header>
+
+            <!-- Cards de Resumo -->
+            <div class="finance-summary-grid">
+                <div class="finance-card">
+                    <span>RECEITA TOTAL (MÊS)</span>
+                    <strong style="color: var(--green-primary);">R$ 12.400,00</strong>
+                </div>
+                <div class="finance-card">
+                    <span>RECEBIDO</span>
+                    <strong style="color: var(--text-main);">R$ 9.800,00</strong>
+                </div>
+                <div class="finance-card">
+                    <span>PENDENTE / EM ATRASO</span>
+                    <strong style="color: #ffb74d;">R$ 2.600,00</strong>
+                </div>
+            </div>
+
+            <!-- Tabela de Pagamentos -->
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ATLETA / RESPONSÁVEL</th>
+                            <th>REFERÊNCIA</th>
+                            <th>VALOR</th>
+                            <th>VENCIMENTO</th>
+                            <th>STATUS</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>G. Hulk</strong>
+                                <span class="sub-text">Atleta Profissional</span>
+                            </td>
+                            <td>Mensalidade Setembro/2026</td>
+                            <td><strong>R$ 350,00</strong></td>
+                            <td>10/09/2026</td>
+                            <td><span style="color: var(--green-primary); font-weight: 600; font-size: 0.8rem;">✓ Pago</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver recibo')">Recibo</button>
+                                <button class="btn-action delete" onclick="alert('Estornar')">Estornar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>C. Pavón</strong>
+                                <span class="sub-text">Atleta Profissional</span>
+                            </td>
+                            <td>Mensalidade Setembro/2026</td>
+                            <td><strong>R$ 350,00</strong></td>
+                            <td>10/09/2026</td>
+                            <td><span style="color: var(--green-primary); font-weight: 600; font-size: 0.8rem;">✓ Pago</span></td>
+                            <td>
+                                <button class="btn-action edit" onclick="alert('Ver recibo')">Recibo</button>
+                                <button class="btn-action delete" onclick="alert('Estornar')">Estornar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>G. Arana</strong>
+                                <span class="sub-text">Atleta Profissional</span>
+                            </td>
+                            <td>Mensalidade Setembro/2026</td>
+                            <td><strong>R$ 350,00</strong></td>
+                            <td>10/09/2026</td>
+                            <td><span style="color: #ffb74d; font-weight: 600; font-size: 0.8rem;">⏱️ Pendente</span></td>
+                            <td>
+                                <button class="btn-action edit" style="border-color: var(--green-primary); color: var(--green-primary);" onclick="alert('Confirmar pagamento')">Baixar</button>
+                                <button class="btn-action delete" onclick="alert('Lembrar')">Aviso</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+</body>
+</html>

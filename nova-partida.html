@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Nova Partida</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="nova-partida.html" class="nav-item active">+ Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="#" class="nav-item">Consulta</a>
+                <a href="#" class="nav-item">+ Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Nova Partida</h1>
+                    <p>Registar novo confronto oficial ou amistoso</p>
+                </div>
+                <a href="partidas.html" class="btn-back-form">← Voltar</a>
+            </header>
+
+            <form id="form-nova-partida" class="form-cards-grid">
+                <!-- Coluna Esquerda: Informações da Partida -->
+                <section class="form-card">
+                    <h3 class="card-section-title">INFORMAÇÕES DA PARTIDA</h3>
+
+                    <div class="form-group">
+                        <label for="clube-mandante">CLUBE MANDANTE <span class="required">*</span></label>
+                        <select id="clube-mandante" required>
+                            <option value="" disabled selected>Selecione o clube mandante</option>
+                            <option value="atletico">Clube Atlético Mineiro</option>
+                            <option value="flamengo">Clube de Regatas do Flamengo</option>
+                            <option value="sao-paulo">São Paulo Futebol Clube</option>
+                            <option value="santos">Santos Futebol Clube</option>
+                            <option value="corinthians">Sport Club Corinthians Paulista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clube-visitante">CLUBE VISITANTE <span class="required">*</span></label>
+                        <select id="clube-visitante" required>
+                            <option value="" disabled selected>Selecione o clube visitante</option>
+                            <option value="atletico">Clube Atlético Mineiro</option>
+                            <option value="flamengo">Clube de Regatas do Flamengo</option>
+                            <option value="sao-paulo">São Paulo Futebol Clube</option>
+                            <option value="santos">Santos Futebol Clube</option>
+                            <option value="corinthians">Sport Club Corinthians Paulista</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="competicao-partida">COMPETIÇÃO <span class="required">*</span></label>
+                        <select id="competicao-partida" required>
+                            <option value="" disabled selected>Selecione a competição</option>
+                            <option value="brasileirao">Brasileirão</option>
+                            <option value="copabr">Copa BR</option>
+                            <option value="libertadores">Libertadores</option>
+                            <option value="mineiro">Campeonato Mineiro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rodada">RODADA / FASE</label>
+                        <input type="text" id="rodada" placeholder="Ex: Rodada 24, Quartas de Final...">
+                    </div>
+                </section>
+
+                <!-- Coluna Direita: Data, Local e Status -->
+                <section class="form-card">
+                    <h3 class="card-section-title">DATA, LOCAL E STATUS</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data-partida">DATA <span class="required">*</span></label>
+                            <input type="date" id="data-partida" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horario-partida">HORÁRIO <span class="required">*</span></label>
+                            <input type="time" id="horario-partida" value="19:00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="local-estadio">LOCAL / ESTÁDIO <span class="required">*</span></label>
+                        <input type="text" id="local-estadio" placeholder="Estádio, Cidade - UF" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status-partida">STATUS</label>
+                        <select id="status-partida">
+                            <option value="agendada" selected>Agendada</option>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="encerrada">Encerrada</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observacoes">OBSERVAÇÕES</label>
+                        <input type="text" id="observacoes" placeholder="Observações adicionais sobre o jogo">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">Registar Partida</button>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+
+    <script>
+        document.getElementById('form-nova-partida').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Partida registada com sucesso! Em breve integrada ao Back-end Java.');
+            window.location.href = 'partidas.html';
+        });
+    </script>
+</body>
+</html>

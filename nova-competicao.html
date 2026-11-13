@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Nova Competição</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/clubes.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Menu Lateral / Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>VARZEA 360</h2>
+                <p>DA ESCALAÇÃO AO JOGO,<br>DO JOGO À GESTÃO.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-category">CLUBES</span>
+                <a href="clubes.html" class="nav-item">Consulta de Clubes</a>
+                <a href="novo-clube.html" class="nav-item">Cadastrar Clube</a>
+
+                <span class="nav-category">PARTIDAS</span>
+                <a href="partidas.html" class="nav-item">Consulta de Partidas</a>
+                <a href="nova-partida.html" class="nav-item">+ Nova Partida</a>
+
+                <span class="nav-category">COMPETIÇÕES</span>
+                <a href="competicoes.html" class="nav-item">Consulta</a>
+                <a href="nova-competicao.html" class="nav-item active">+ Nova Competição</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="profile-badge">
+                    <span class="badge-label">PERFIL DE ACESSO</span>
+                    <strong>Donos</strong>
+                </div>
+                <button class="theme-toggle-btn">☀️ Modo Claro <span class="dark-tag">DARK</span></button>
+                <a href="index.html" class="logout-link">Sair da conta</a>
+                <span class="version-text">VARZEA 360 v2026.1</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Nova Competição</h1>
+                    <p>Criar campeonato, copa ou torneio</p>
+                </div>
+                <a href="competicoes.html" class="btn-back-form">← Voltar</a>
+            </header>
+
+            <form id="form-nova-competicao" class="form-cards-grid">
+                <!-- Coluna Esquerda: Dados Principais -->
+                <section class="form-card">
+                    <h3 class="card-section-title">DADOS DA COMPETIÇÃO</h3>
+
+                    <div class="form-group">
+                        <label for="nome-comp">NOME DA COMPETIÇÃO <span class="required">*</span></label>
+                        <input type="text" id="nome-comp" placeholder="Ex: Copa Várzea Pirapora" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao-comp">DESCRIÇÃO / NOME COMPLETO</label>
+                        <input type="text" id="descricao-comp" placeholder="Ex: Campeonato Amador Municipal">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="temporada">TEMPORADA <span class="required">*</span></label>
+                            <input type="number" id="temporada" value="2026" min="2020" max="2035" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organizador">ORGANIZADOR</label>
+                            <input type="text" id="organizador" placeholder="Ex: Liga Local">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formato">FORMATO DO TORNEIO <span class="required">*</span></label>
+                        <select id="formato" required>
+                            <option value="" disabled selected>Selecione o formato</option>
+                            <option value="pontos">Pontos Corridos</option>
+                            <option value="mata-mata">Eliminatórias (Mata-mata)</option>
+                            <option value="misto">Fase de Grupos + Mata-mata</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Coluna Direita: Datas, Categoria e Premiação -->
+                <section class="form-card">
+                    <h3 class="card-section-title">CALENDÁRIO E PREMIAÇÃO</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="inicio">DATA DE INÍCIO <span class="required">*</span></label>
+                            <input type="date" id="inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="termino">DATA DE TÉRMINO <span class="required">*</span></label>
+                            <input type="date" id="termino" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="categoria">CATEGORIA</label>
+                            <input type="text" id="categoria" placeholder="Ex: Convencional / Amador">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="premiacao">PREMIAÇÃO (R$)</label>
+                            <input type="text" id="premiacao" placeholder="Ex: 5000.00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status-comp">STATUS DA COMPETIÇÃO</label>
+                        <select id="status-comp">
+                            <option value="inscricoes" selected>Inscrições Abertas</option>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="encerrada">Encerrada</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">Registar Competição</button>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </div>
+
+    <button class="floating-help-btn">?</button>
+
+    <script>
+        document.getElementById('form-nova-competicao').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Competição registada com sucesso! Em breve conectaremos ao Back-end Java.');
+            window.location.href = 'competicoes.html';
+        });
+    </script>
+</body>
+</html>

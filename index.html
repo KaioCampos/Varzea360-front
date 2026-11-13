@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Login</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <main class="login-container">
+        <!-- Lado Esquerdo: Identidade Visual -->
+        <section class="brand-section">
+            <div class="circles-decoration top">
+                <span></span><span></span><span></span>
+            </div>
+            
+            <div class="brand-content">
+                <h1>VARZEA 360</h1>
+                <div class="divider"></div>
+                <p>DA ESCALAÇÃO AO JOGO,<br><span>DO JOGO À GESTÃO.</span></p>
+            </div>
+
+            <div class="circles-decoration bottom">
+                <span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <!-- Lado Direito: Formulário -->
+        <section class="form-section">
+            <div class="form-wrapper">
+                <h2>BEM VINDO</h2>
+
+                <div class="profile-selector">
+                    <label class="section-label">PERFIL DE ACESSO</label>
+                    <div class="profile-grid">
+                        <button type="button" class="profile-card active" data-profile="donos">
+                            <strong>Donos</strong>
+                            <span>Gestão completa</span>
+                        </button>
+                        <button type="button" class="profile-card" data-profile="jogador">
+                            <strong>Jogador</strong>
+                            <span>Desempenho e agenda</span>
+                        </button>
+                        <button type="button" class="profile-card" data-profile="comissao">
+                            <strong>Comissão</strong>
+                            <span>Elenco e partidas</span>
+                        </button>
+                        <button type="button" class="profile-card" data-profile="organizadores">
+                            <strong>Organizadores</strong>
+                            <span>Competições e consultas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="email">E-MAIL</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="senha">SENHA</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="senha" placeholder="••••••••" required>
+                            <button type="button" id="toggle-password" title="Mostrar senha">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Entrar</button>
+
+                    <a href="planos.html" class="btn-plans">
+                        <span class="plan-icon">▣</span>
+                        <div class="plan-text">
+                            <strong>Conheça nossos planos</strong>
+                            <span>Descubra o plano ideal para seu clube.</span>
+                        </div>
+                    </a>
+                </form>
+
+                <footer class="login-footer">
+                    <p>VARZEA 360 © 2026 · Da escalação ao jogo, do jogo à gestão.</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <button id="theme-toggle" class="floating-theme-btn">☀️ Modo Claro</button>
+    <button class="floating-help-btn">?</button>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várzea 360 - Planos e Assinaturas</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/planos.css">
+</head>
+<body>
+    <header class="plans-header">
+        <a href="index.html" class="btn-back">Voltar para login</a>
+        <span class="brand-logo">VARZEA 360</span>
+        <div class="spacer"></div>
+    </header>
+
+    <main class="plans-container">
+        <div class="plans-intro">
+            <span class="tag-subtitle">PLANOS PARA CLUBES</span>
+            <h1>Planos e Assinaturas</h1>
+            <p>Escolha a estrutura ideal para organizar seu clube. Jogadores continuam com acesso gratuito.</p>
+        </div>
+
+        <section class="plans-grid">
+            <!-- Plano Amador -->
+            <article class="plan-card">
+                <div class="plan-header">
+                    <span class="plan-icon">▣</span>
+                    <h2>AMADOR</h2>
+                </div>
+                <div class="plan-price">
+                    <strong>R$ 99,90</strong> <span>/mês</span>
+                </div>
+                <p class="plan-limit">Até 25 usuários · 1 equipe</p>
+                
+                <hr class="card-divider">
+
+                <ul class="plan-features">
+                    <li><span>✓</span> Gestão de uma equipe</li>
+                    <li><span>✓</span> Cadastro de usuários</li>
+                    <li><span>✓</span> Organização de partidas</li>
+                    <li><span>✓</span> Calendário e resultados</li>
+                    <li><span>✓</span> Estatísticas básicas</li>
+                </ul>
+
+                <button class="btn-subscribe" onclick="selecionarPlano('Amador')">Assinar plano</button>
+            </article>
+
+            <!-- Plano Competitivo (Destaque) -->
+            <article class="plan-card featured">
+                <div class="recommended-badge">MAIS RECOMENDADO</div>
+                
+                <div class="plan-header">
+                    <span class="plan-icon">▣</span>
+                    <h2>COMPETITIVO</h2>
+                </div>
+                <div class="plan-price">
+                    <strong>R$ 169,90</strong> <span>/mês</span>
+                </div>
+                <p class="plan-limit">Até 50 usuários · 2 equipes</p>
+                
+                <hr class="card-divider">
+
+                <ul class="plan-features">
+                    <li><span>✓</span> Gestão de até 2 equipes</li>
+                    <li><span>✓</span> Estatísticas avançadas</li>
+                    <li><span>✓</span> Controle de presença</li>
+                    <li><span>✓</span> Histórico de desempenho</li>
+                    <li><span>✓</span> Relatórios da equipe</li>
+                    <li><span>✓</span> Gestão completa do elenco</li>
+                </ul>
+
+                <button class="btn-subscribe primary" onclick="selecionarPlano('Competitivo')">Assinar plano</button>
+            </article>
+
+            <!-- Plano Profissional -->
+            <article class="plan-card">
+                <div class="plan-header">
+                    <span class="plan-icon">▣</span>
+                    <h2>PROFISSIONAL</h2>
+                </div>
+                <div class="plan-price">
+                    <strong>R$ 249,90</strong> <span>/mês</span>
+                </div>
+                <p class="plan-limit">Até 100 usuários · 4 equipes</p>
+                
+                <hr class="card-divider">
+
+                <ul class="plan-features">
+                    <li><span>✓</span> Gestão de até 4 equipes</li>
+                    <li><span>✓</span> Relatórios avançados</li>
+                    <li><span>✓</span> Painel de desempenho do clube</li>
+                    <li><span>✓</span> Comparação entre atletas</li>
+                    <li><span>✓</span> Histórico de movimentações</li>
+                    <li><span>✓</span> Divulgação de atletas</li>
+                    <li><span>✓</span> Suporte prioritário</li>
+                </ul>
+
+                <button class="btn-subscribe" onclick="selecionarPlano('Profissional')">Assinar plano</button>
+            </article>
+        </section>
+    </main>
+
+    <button class="floating-help-btn">?</button>
+
+    <script>
+        function selecionarPlano(nomePlano) {
+            alert(`Você selecionou o plano ${nomePlano}! Em breve conectaremos esta etapa ao cadastro do clube.`);
+        }
+    </script>
+</body>
+</html>

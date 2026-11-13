@@ -1,0 +1,115 @@
+/* css/formularios.css */
+.btn-back-form {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-back-form:hover {
+    border-color: var(--green-primary);
+    color: var(--green-primary);
+}
+
+/* Grelha de 2 Colunas para os Cartões do Formulário */
+.form-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-section-title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.6px;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #ff5252;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    background-color: #16212a;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text-main);
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--green-primary);
+}
+
+.form-actions {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-save {
+    width: 100%;
+    background-color: var(--green-primary);
+    color: #051b0e;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+    background-color: var(--green-hover);
+}
+
+/* Responsividade para ecrãs menores */
+@media (max-width: 900px) {
+    .form-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
